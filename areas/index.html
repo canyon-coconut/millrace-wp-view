@@ -8,8 +8,8 @@
 <meta name='robots' content='max-image-preview:large' />
 <link rel="alternate" type="application/rss+xml" title="Millrace Plumbing &amp; Heating &raquo; Feed" href="../feed/" />
 <link rel="alternate" type="application/rss+xml" title="Millrace Plumbing &amp; Heating &raquo; Comments Feed" href="../comments/feed/" />
-
-
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="../wp-json/oembed/1.0/embed?url=http%3A%2F%2F127.0.0.1%3A8082%2Fareas%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="../wp-json/oembed/1.0/embed?url=http%3A%2F%2F127.0.0.1%3A8082%2Fareas%2F&#038;format=xml" />
 <style id="wp-img-auto-sizes-contain-inline-css">
 img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 /*# sourceURL=wp-img-auto-sizes-contain-inline-css */
@@ -40,7 +40,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <link rel='stylesheet' id='hello-elementor-theme-style-css' href='../wp-content/themes/hello-elementor/assets/css/theme.css?ver=3.5.2' media='all' />
 <link rel='stylesheet' id='hello-elementor-header-footer-css' href='../wp-content/themes/hello-elementor/assets/css/header-footer.css?ver=3.5.2' media='all' />
 <link rel='stylesheet' id='elementor-frontend-css' href='../wp-content/plugins/elementor/assets/css/frontend.min.css?ver=4.4.0' media='all' />
-<link rel='stylesheet' id='elementor-post-5-css' href='../wp-content/uploads/elementor/css/post-5.css?ver=1794650603' media='all' />
+<link rel='stylesheet' id='elementor-post-5-css' href='../wp-content/uploads/elementor/css/post-5.css?ver=1794670139' media='all' />
 <link rel='stylesheet' id='elementor-gf-roboto-css' href='https://fonts.googleapis.com/css?family=Roboto:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&#038;display=swap' media='all' />
 <link rel='stylesheet' id='elementor-gf-robotoslab-css' href='https://fonts.googleapis.com/css?family=Roboto+Slab:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&#038;display=swap' media='all' />
 <link rel="https://api.w.org/" href="../wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="../wp-json/wp/v2/pages/8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc.php?rsd" />
@@ -95,9 +95,10 @@ h1,h2,h3,h4,h5{font-family:'Archivo',sans-serif}
 .mr-stars{color:#ff8a33;letter-spacing:2.5px;font-size:15px}
 /* header column widths are set natively on the columns themselves (Column Width %) — no CSS needed */
 /* hero: the dark gradient over the photo is a normal background-overlay IMAGE set in the editor (media library: "Hero gradient overlay") — no CSS needed. Only the copy column width is pinned here. */
-/* mobile header hidden except on phones; desktop header hidden on phones */
+/* small header hidden on desktop; desktop header hidden below desktop —
+   the original keeps its small header all the way up to 1024 (M6) */
 .mr-mhead-sec{display:none}
-@media (max-width: 767px){
+@media (max-width: 1023px){
   .mr-mhead-sec{display:block}
   .mr-header-sec{display:none}
 }
@@ -142,9 +143,7 @@ h1,h2,h3,h4,h5{letter-spacing:-0.02em}
 @media (max-width:767px){
   .mr-hero-sec > .e-con-inner{height:100%;align-items:center;justify-content:center !important}
   .mr-hero-sec > .e-con-inner > .e-con{justify-content:center;align-self:center}
-  .mr-estimate-sec > .e-con-inner > .e-con, .mr-areas-sec > .e-con-inner > .e-con{padding-left:0 !important;padding-right:0 !important}
   .mr-headrow-sec > .e-con-inner{gap:32px}
-  .mr-estimate-sec > .e-con-inner, .mr-areas-sec > .e-con-inner, .mr-footer1-sec > .e-con-inner, .mr-footer2-sec > .e-con-inner, .mr-footer3-sec > .e-con-inner{padding-left:16px !important;padding-right:16px !important}
   .mr-hero-sec .elementor-widget-button .elementor-button{width:100%}
   .mr-headrow-sec h2.elementor-heading-title, .mr-process-sec h2.elementor-heading-title, .mr-areas-sec h2.elementor-heading-title{letter-spacing:-0.75px !important}
   .mr-hero-sec h1.elementor-heading-title{letter-spacing:-0.82px !important}
@@ -156,7 +155,7 @@ h1,h2,h3,h4,h5{letter-spacing:-0.02em}
    never appears on desktop, and drops the five normal page links below the
    sticky phone header in the site's cream / teal / orange language. */
 .mr-mmenu-sec{display:none !important}
-@media (max-width:767px){
+@media (max-width:1023px){
   .mr-mmenu-sec:target{display:flex !important;position:fixed;top:65px;left:0;right:0;z-index:98;max-height:calc(100svh - 65px);overflow:auto;background:#f7f6f1;border-bottom:1px solid #e1ded4;box-shadow:0 22px 28px -24px rgba(21,42,40,0.5)}
   .mr-mnav{display:flex;flex-direction:column;padding:6px 0 10px}
   .mr-mnav a{display:flex;align-items:center;min-height:52px;padding:13px 20px;border-top:1px solid #e9e6dc;color:#152a28;font-family:'Manrope';font-size:16px;font-weight:700;line-height:1.25;text-decoration:none}
@@ -370,7 +369,7 @@ h1,h2,h3,h4,h5{letter-spacing:-0.02em}
 .mr-cta-btns .b2{background:#f7f6f1;color:#152a28;border-radius:12px;padding:0 28px;height:56px;width:260px;font-family:Manrope,sans-serif;font-weight:600;font-size:16px}
 .mr-cta-btns .b2 svg{width:20px;height:20px}
 .mr-cta-btns .b2:hover{background:rgba(247,246,241,0.93)}
-@media (max-width:639px){.mr-cta-btns{flex-direction:column}.mr-cta-btns a{width:100%}}
+@media (max-width:639px){.mr-cta-btns{flex-direction:column}.mr-cta-btns .b1,.mr-cta-btns .b2{width:100%}}
 
 /* M2 content rules for generator markup */
 .mr-badge{white-space:nowrap}
@@ -393,6 +392,142 @@ h1,h2,h3,h4,h5{letter-spacing:-0.02em}
 .mr-foot-num{display:inline-flex;align-items:center;gap:8px;font-family:Archivo,sans-serif;font-size:18px;font-weight:700;line-height:1.55;color:#f7f6f1;text-decoration:none}
 .mr-foot-num svg{width:13px;height:13px;color:#ff8a33;flex:0 0 13px}
 .mr-foot-num:hover{color:#ff8a33}
+
+/* ================= M6 (responsive parity with the original) =================
+   The original steps its layout at 640 / 768 / 1024 px, but Elementor's own
+   device steps sit at 767 / 1024 — so the bands between the two systems are
+   set here. Everything else responsive is native element settings. */
+
+/* ---- 640–767: the original's first step up from phones ---- */
+@media (min-width:640px) and (max-width:767px){
+  /* hero copy at the original's fixed measure (576, plus its 16 phone inset) */
+  .mr-hero-sec > .e-con-inner > .e-con:first-child{width:592px !important;max-width:592px;flex:none !important;align-self:flex-start !important}
+  .mr-hero-sec h1.elementor-heading-title{font-size:48px !important;letter-spacing:-1.44px !important}
+  /* hero buttons side by side at their desktop shares (the button row is a
+     full-width container, so its children sit directly under it) */
+  .mr-hero-btns{flex-direction:row !important;flex-wrap:nowrap !important}
+  .mr-hero-btns > .e-con:first-child{flex:0 0 34.9% !important;width:34.9% !important}
+  .mr-hero-btns > .e-con:last-child{flex:0 0 37.5% !important;width:37.5% !important}
+  /* facts strip: one row of three (it is taller here, so it pulls up further) */
+  .mr-strip-sec > .e-con-inner{flex-direction:row !important;flex-wrap:nowrap !important}
+  .mr-strip-sec > .e-con-inner > .e-con{flex:0 0 33.333% !important;width:33.333% !important}
+  .mr-strip-sec{margin-top:-89px !important}
+  /* promises and services in two columns, as the original has them here */
+  .mr-promises-sec > .e-con-inner, .mr-services-sec > .e-con-inner{flex-direction:row !important;flex-wrap:wrap !important}
+  .mr-promises-sec > .e-con-inner > .e-con{flex:0 0 calc((100% - 24px) / 2) !important;width:calc((100% - 24px) / 2) !important}
+  .mr-services-sec > .e-con-inner > .e-con{flex:0 0 calc((100% - 20px) / 2) !important;width:calc((100% - 20px) / 2) !important}
+  /* call band type at this size */
+  .mr-cta-h2{font-size:30px !important;line-height:36px !important;letter-spacing:-0.75px !important}
+  .mr-cta-btns .b1{font-size:20px !important;line-height:28px !important}
+}
+
+/* ---- the small header below desktop: one flex row, logo takes the slack ---- */
+@media (max-width:1023px){
+  .mr-mhead-sec > .elementor-container{display:flex;flex-wrap:nowrap;align-items:center}
+  .mr-mhead-sec .elementor-column{flex:0 0 auto}
+  .mr-mhead-sec .elementor-column:first-child{flex:1 1 auto}
+}
+@media (max-width:767px){
+  /* the quote button's column only exists on mid-size screens */
+  .mr-mhead-sec .elementor-column:nth-child(2){display:none}
+}
+
+/* ---- 768–1023: the original's middle step (small tablets) ---- */
+@media (min-width:768px) and (max-width:1023px){
+  /* hero copy at the original's fixed measure (576, plus its 24 inset) */
+  .mr-hero-sec > .e-con-inner > .e-con:first-child{flex:0 0 600px !important;width:600px !important}
+  /* mid-size header: bigger logo, roomier bar; the drop-down sits under it */
+  .mr-mhead-sec{padding:16px 24px !important}
+  .mr-mhead-sec .elementor-widget-image img{width:178px !important;height:auto !important}
+  .mr-mmenu-sec:target{top:80px;max-height:calc(100svh - 80px)}
+}
+
+/* ---- 1024 and up: the original's desktop step starts here, not at 1025 ---- */
+@media (min-width:1024px){
+  /* the headline follows the original's fluid size, not one fixed size */
+  .mr-hero-sec h1.elementor-heading-title{font-size:clamp(40px, 3.5vw, 60px) !important;letter-spacing:-0.03em !important}
+  .mr-hero-sec > .e-con-inner > .e-con:first-child{flex:0 0 calc(clamp(576px, 36.6vw, 628.6px) + 24px) !important;width:calc(clamp(576px, 36.6vw, 628.6px) + 24px) !important}
+  /* at exactly 1024 Elementor still applies its tablet rules; these restore
+     the desktop arrangement the original already has at this width */
+  .mr-promises-sec > .e-con-inner{flex-wrap:nowrap !important}
+  .mr-promises-sec > .e-con-inner > .e-con{flex:0 0 calc((100% - 96px) / 4) !important}
+  .mr-services-sec > .e-con-inner{flex-wrap:nowrap !important}
+  .mr-services-sec > .e-con-inner > .e-con{flex:0 0 calc((100% - 60px) / 4) !important}
+  .mr-estimate-sec > .e-con-inner, .mr-process-sec > .e-con-inner, .mr-areas-sec > .e-con-inner{flex-direction:row !important}
+  .mr-estimate-sec > .e-con-inner > .e-con:first-child{flex:0 0 calc((100% - 56px) * 0.425) !important}
+  .mr-estimate-sec > .e-con-inner > .e-con:last-child{flex:0 0 calc((100% - 56px) * 0.575) !important}
+  .mr-process-sec > .e-con-inner > .e-con, .mr-areas-sec > .e-con-inner > .e-con{flex:0 0 calc((100% - 64px) / 2) !important}
+}
+@media (min-width:768px){
+  .mr-cta-btns .b1{line-height:32px}
+}
+/* desktop header in the squeeze band (1024 up to the full 1152 track):
+   natural widths spread across the bar, so nothing wraps or grows tall */
+@media (min-width:1024px) and (max-width:1166px){
+  .mr-header-sec > .e-con-inner{justify-content:space-between !important}
+  .mr-header-sec > .e-con-inner > .e-con{flex:0 0 auto !important;width:auto !important}
+  .mr-header-sec .elementor-button{white-space:nowrap}
+}
+
+/* ================= M6, second pass ================= */
+/* the split sections' words sit in a measure no wider than the original's
+   (672px); on desktop the columns are narrower than that, so this only
+   bites when the sections stack on mid-size screens */
+.mr-estimate-sec > .e-con-inner > .e-con:first-child > *:nth-child(-n+3),
+.mr-areas-sec > .e-con-inner > .e-con:first-child > *:nth-child(-n+3),
+.mr-process-sec > .e-con-inner > .e-con:last-child > *:nth-child(-n+3){max-width:672px}
+.mr-estimate-sec .mr-h2{margin-top:12px;text-wrap:balance}
+.mr-areas-sec .elementor-heading-title, .mr-process-sec .elementor-heading-title{text-wrap:balance}
+/* review cards: the quote grows so the name row sits at the card's foot,
+   like the original's cards */
+.mr-reviews-sec .e-con-inner > .e-con > .elementor-widget-html{flex:1;display:flex;flex-direction:column}
+.mr-reviews-sec .elementor-widget-html > .elementor-widget-container{display:flex;flex-direction:column;flex:1}
+.mr-reviews-sec .mr-review-text{flex:1}
+/* section head rows on mid-size screens: the words keep the original's
+   672px measure and the side element wraps underneath only when the two
+   no longer fit side by side — the original's own wrapping behaviour */
+@media (min-width:768px) and (max-width:1023px){
+  .mr-headrow-sec > .e-con-inner{flex-wrap:wrap !important}
+  .mr-headrow-sec > .e-con-inner > .e-con:first-child{flex:0 1 672px !important;width:672px !important}
+  .mr-headrow-sec > .e-con-inner > .e-con:last-child{flex:0 0 auto !important;width:auto !important}
+}
+@media (min-width:768px){
+  /* the side element (button / rating) hugs the right edge, as the
+     original's space-between row puts it there */
+  .mr-headrow-sec > .e-con-inner > .e-con:last-child{align-items:flex-end}
+}
+/* call band on phones: the original's smaller headline, and its phone
+   number set at the same size as on small tablets */
+@media (max-width:639px){
+  .mr-cta-h2{font-size:30px !important;line-height:36px !important;letter-spacing:-0.75px !important}
+  .mr-cta-btns .b1{font-size:20px !important;line-height:28px !important}
+}
+/* at exactly 1024 Elementor is still in its tablet mode; the footer and the
+   section head rows already run their desktop arrangement there */
+@media (min-width:1024px){
+  .mr-footer1-sec > .e-con-inner{padding-top:56px !important;padding-bottom:59px !important}
+  .mr-footer1-sec > .e-con-inner{flex-wrap:nowrap !important;gap:32px !important}
+  .mr-footer1-sec > .e-con-inner > .e-con:nth-child(1){flex:0 0 calc((100% - 96px) * 0.345) !important}
+  .mr-footer1-sec > .e-con-inner > .e-con:nth-child(2){flex:0 0 calc((100% - 96px) * 0.155) !important}
+  .mr-footer1-sec > .e-con-inner > .e-con:nth-child(3){flex:0 0 calc((100% - 96px) * 0.25) !important}
+  .mr-footer1-sec > .e-con-inner > .e-con:nth-child(4){flex:0 0 calc((100% - 96px) * 0.25) !important}
+  .mr-footer2-sec > .e-con-inner{flex-direction:row !important;gap:48px !important}
+  .mr-footer2-sec > .e-con-inner > .e-con:first-child{flex:0 0 calc((100% - 48px) * 0.44) !important}
+  .mr-footer2-sec > .e-con-inner > .e-con:last-child{flex:0 0 calc((100% - 48px) * 0.56) !important}
+  .mr-headrow-sec > .e-con-inner{flex-direction:row !important;gap:0 !important}
+  .mr-headrow-sec > .e-con-inner > .e-con:first-child{flex:0 0 70% !important;width:70% !important}
+  .mr-headrow-sec > .e-con-inner > .e-con:last-child{flex:0 0 30% !important;width:30% !important}
+}
+
+/* M6 final pass: below 768 the original's section headings use a roomier
+   line-height (36px at 30px size) and -0.75px tracking. The builder data
+   carried the desktop ratios down, making headings 31.8px/tighter here. */
+@media (max-width: 767px) {
+  .mr-estimate-sec h2, .mr-process-sec h2, .mr-areas-sec h2, .mr-headrow-sec h2 {
+    line-height: 36px;
+    letter-spacing: -0.75px;
+  }
+}
 
 </style>
 </head>
